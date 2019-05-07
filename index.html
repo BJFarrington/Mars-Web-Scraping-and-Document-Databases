@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+      </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>This is the latest Mars news.</h2>
+        <h4>{{mars.news_date}}</h4>
+        <h4> {{ mars.news_title }}</h4>
+        <p> {{mars.summary}} </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 big_box">
+        <h2>This is the featured image from JPL.</h2>
+        <img src="{{mars.featured_image_url}}" alt="Mars featured image" />
+      </div>
+
+      <div class="col-md-4">
+        <div class="row weather-box">
+          <div class="col-md-12">
+            <h3>The current weather on Mars</h3>
+            <p>
+              {{mars.mars_weather}}
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <h3>Mars facts</h3>
+          {{mars.mars_table | safe }}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 box">
+            <h1>Comparison</h1>
+            <hr>
+            <br>
+
+            <p> Click any plot to get an in-depth analysis</p>
+            
+            <div class="col-lg-12 "></div>
+              <div class="row"></div>
+              <div class="col-6 "></div>
+                      
+                      <a class= "pics" href='Max_Temperature.html'><img src="LatitudevsTemperaturePlot.png" alt="temp" height="500" width="600"></a> 
+                      
+                      <a class= "pics" href='Humidity.html'><img src="LatitudevsHumidityPlot.png" alt="humidity" height="500" width="600"></a>
+            <br>
+              <div class="row"></div>
+              <div class="col-6 "></div>
+                    
+                      <a class= "pics" href='Cloudiness.html'><img src="LatitudevsCloudinessPlot.png" alt="cloudiness" height="500" width="600"></a>
+                     
+                      <a class= "pics" href='Wind_Speed.html'><img src="tempvsWindSpeedPlot.png" alt="wind_vs_temp" height="500" width="600"></a>
+            
+        </div>
+       
+    </div>
+</div>
+</body>
+
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>
+</body>
+
+</html>
