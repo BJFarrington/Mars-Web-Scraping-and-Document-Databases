@@ -12,14 +12,14 @@
     
     <div class="jumbotron">
     <h1>Mission to Mars</h1>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Scrape Data</a></p>
+    <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Data</a></p>
     </div>
 
     <div class="container">
             <div class="row">
               <h2>Recent Mars News</h2>
-              <h3>{{ mars_info.news_title }}</h3>
-              <p>{{ mars_info.paragraph }}</p>
+              <h3>{{ db.mars_data_collection.news_title }}</h3>
+              <p>{{ db.mars_data_collection.paragraph }}</p>
             </div>
         
             <div class="row">
@@ -31,19 +31,19 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Current Weather</div>
                     <div class="panel-body">
-                      {{ mars_info.mars_weather }}
+                      {{ db.mars_data_collection..mars_weather }}
                     </div>
                   </div>
               </div>
               <h4>Mars Facts</h4>
-              {{mars_info.clean_html_table | safe}}
+              {{db.mars_data_collection.clean_html_table | safe}}
             </div>
           </div>
           <div class="container text-center">
             <div class="row">
               <h2>Mars Hemispheres</h2>
               <hr>
-              {% for hpic in mars_info.hemisphere_image_urls %}
+              {% for hpic in db.mars_data_collection.hemisphere_image_urls %}
               <div class="col-md-6">
               <div class="panel panel-default">
                   <div class="panel-body">

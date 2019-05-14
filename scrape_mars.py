@@ -1,5 +1,4 @@
-
-from selenium import webdriver
+#from selenium import webdriver
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import pandas as pd
@@ -159,7 +158,11 @@ def scrape():
     mars_info.append({'Mars featured image' : featured_image_url})
     mars_info.append({'weather' : mars_weather})
     mars_info.append({'Mars Facts' : clean_html_table})
-    mars_info.append({'hemisphere': hemisphere_image_urls})
+    mars_info.append({'Mars Hemisphere' : hemisphere_image_urls})
+
+    mars_info
+
+    browser.quit()
 
     return mars_info
 

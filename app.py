@@ -29,10 +29,15 @@ def home():
 @app.route("/scrape")
 
 def scrape():
-
-
+    
     mars_info = scrape_mars.scrape()
-    collection.insert_many(mars_info)
+    db = client.mars_db
+    collection = db.mars_data_collection
+    
+
+    collection.insert_many(mars_info , upsert=True)
+
+    
     return  redirect("/", code=302)
 
 if __name__ == "__main__":
