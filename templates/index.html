@@ -18,36 +18,36 @@
     <div class="container">
             <div class="row">
               <h2>Recent Mars News</h2>
-              <h3>{{ db.mars_data_collection.news_title }}</h3>
-              <p>{{ db.mars_data_collection.paragraph }}</p>
+              <h3>{{ mars.title }}</h3>
+              <p>{{ mars.paragraph }}</p>
             </div>
         
             <div class="row">
               <div class="col-md-8">
                 <h2>Mars Images</h2>
-                <img src = "{{ mars_info.featured_image_url }}" alt="featured_image_url" width="100%">
+                <img src = "{{ mars.featured_image }}" alt="featured_image_url" width="100%">
               </div>
               <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">Current Weather</div>
                     <div class="panel-body">
-                      {{ db.mars_data_collection..mars_weather }}
+                      {{ mars.weather }}
                     </div>
                   </div>
               </div>
               <h4>Mars Facts</h4>
-              {{db.mars_data_collection.clean_html_table | safe}}
+              {{mars.mars_facts|safe}}
             </div>
           </div>
           <div class="container text-center">
             <div class="row">
               <h2>Mars Hemispheres</h2>
               <hr>
-              {% for hpic in db.mars_data_collection.hemisphere_image_urls %}
+              {% for hpic in mars.mars_hemisphere %}
               <div class="col-md-6">
               <div class="panel panel-default">
                   <div class="panel-body">
-                  <img src="{{ hpic.img_url }}", alt="hemisphere_image" width="80%">
+                  <img src="{{ hpic.img_url }}", alt="img_url" width="80%">
                   </div>
                 <div class="panel-footer">{{ hpic.title }}</div>
               </div>

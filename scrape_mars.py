@@ -15,12 +15,8 @@ def scrape():
     url = 'https://mars.nasa.gov/news'
     browser.visit(url)
 
-
-
-
     html = browser.html
     soup = bs(html, 'html.parser')
-
 
 
     news_title  = soup.find('div', class_="content_title").text
@@ -28,9 +24,6 @@ def scrape():
     paragraph = soup.find('div', class_="article_teaser_body").text
 
     
-
-
-
 
 
 
@@ -43,7 +36,7 @@ def scrape():
 
 
 
-    image = soup.find("img", title= "InSight Images a Sunset on Mars")["src"]
+    image = soup.find("img", alt="Curiosity")["src"]
     featured_image_url = "https://jpl.nasa.gov"+image
 
 
